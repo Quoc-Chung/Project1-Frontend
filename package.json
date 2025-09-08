@@ -8,11 +8,11 @@
     "dev": "concurrently \"npm run dev --prefix Admin\" \"npm run dev --prefix Client\"",
     "build": "concurrently \"npm run build --prefix Admin\" \"npm run build --prefix Client\"",
     "start": "concurrently \"npm run start --prefix Admin\" \"npm run start --prefix Client\"",
-    "install": "npm install",
-    "clean": "rm -rf node_modules && rm -rf Admin/node_modules Admin/package-lock.json Client/node_modules Client/package-lock.json && npm install"
+    "clean": "rimraf node_modules Admin/node_modules Client/node_modules Admin/package-lock.json Client/package-lock.json && npm install"
   },
   "devDependencies": {
-    "concurrently": "^8.2.0"
+    "concurrently": "^8.2.0",
+    "rimraf": "^5.0.5"
   },
   "engines": {
     "node": ">=20.0.0",
@@ -23,5 +23,5 @@
     "url": "https://github.com/yourusername/monorepo-root.git"
   },
   "author": "Quoc Chung",
-  "license": "UTC"
+  "license": "ISC"
 }
