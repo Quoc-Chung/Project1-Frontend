@@ -4,7 +4,7 @@
   "private": true,
   "description": "Monorepo chứa 2 project Next.js: Admin và Client",
   "workspaces": ["Admin", "Client"],
-  "scripts": {
+"scripts": {
     "dev": "concurrently \"npm run dev --prefix Admin\" \"npm run dev --prefix Client\"",
     "build": "concurrently \"npm run build --prefix Admin\" \"npm run build --prefix Client\"",
     "start": "concurrently \"npm run start --prefix Admin\" \"npm run start --prefix Client\"",
