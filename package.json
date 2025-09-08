@@ -1,0 +1,27 @@
+{
+  "name": "monorepo-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo chứa 2 project Next.js: Admin và Client",
+  "workspaces": ["Admin", "Client"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix Admin\" \"npm run dev --prefix Client\"",
+    "build": "concurrently \"npm run build --prefix Admin\" \"npm run build --prefix Client\"",
+    "start": "concurrently \"npm run start --prefix Admin\" \"npm run start --prefix Client\"",
+    "install": "npm install",
+    "clean": "rm -rf node_modules && rm -rf Admin/node_modules Admin/package-lock.json Client/node_modules Client/package-lock.json && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/monorepo-root.git"
+  },
+  "author": "Quoc Chung",
+  "license": "UTC"
+}
